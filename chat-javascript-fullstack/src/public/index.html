@@ -5,15 +5,18 @@
     <title>Chat Javascript Fullstack</title>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   </head>
   <body>
+
     <nav class="navbar navbar-light bg-warning">
       <a class="navbar-brand mx-auto" href="/">Chat Fullstack</a>
     </nav>
-    <div class="container">
 
-      <div class="col-md-6 mt-4">
+    <div id="contentWrap" class="container">
+      <div class="row mt-4">
+
+        <div class="col-md-6 offset-md-1">
           <div class="card">
 
             <div class="card-header">
@@ -28,11 +31,48 @@
               <div class="input-group">
                 <input type="text" name="message" id="message" class="form-control" value="">
                 <div class="input-group-append">
-                  <input type="submit" class="btn btn-warning">
+                  <button type="submit" class="btn btn-warning mt-2">
+                    <i class="fas fa-arrow-circle-right"></i> Send
+                  </button>
                 </div>
               </div>
             </form>
+
           </div>
+        </div>
+
+        <!-- List of connected users -->
+        <div class="col-md-3 offset-md-1">
+          <div class="card">
+
+            <div class="card-header">
+              <h3>Users</h3>
+            </div>
+            <div class="card-body">
+              <div id="usernames"></div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="nickWrap" class="card col-md-4 mt-5 mx-auto">
+
+      <div class="card-header">
+        <h3>Enter your Username:</h3>
+      </div>
+
+      <p id="nickError"></p>
+
+      <div class="card-body">
+        <form id="nickForm">
+          <input id="nickname" type="text" class="form-control" name="nickname" value="">
+          <button type="submit" class="btn btn-warning mt-2 btn-block">
+            Send <i class="fas fa-arrow-circle-right"></i>
+          </button>
+        </form>
       </div>
 
     </div>

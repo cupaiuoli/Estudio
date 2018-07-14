@@ -9,7 +9,7 @@ const io = socketio.listen(server);
 
 require('./sockets.js')(io);
 
-app.set('port', process.env.PORT || 3000)
+app.set('port', process.env.PORT || 3001)
 
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));
