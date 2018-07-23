@@ -1,0 +1,6 @@
+Server
+    node index.js
+Frontend
+    ng serve
+Base de datos
+    mongod --dbpath c:\dev\MongoDB\data\db
