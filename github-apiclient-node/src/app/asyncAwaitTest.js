@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
 
-async function getNombreAwait(username) {
+async function getNombreAsync(username) {
   const url = `https://api.github.com/users/${username}`;
   console.log(`fetching user ${username} at - ${url}`);
 
@@ -21,4 +21,4 @@ function getNombre(username) {
     })
 }
 
-getNombreAwait('cupaiuoli');
+getNombreAsync('cupaiuoli');
