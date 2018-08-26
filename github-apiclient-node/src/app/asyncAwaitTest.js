@@ -1,17 +1,21 @@
 const fetch = require('node-fetch');
 
 
-async function getNombreAsync(username) {
+async function getNameAsync(username) {
   const url = `https://api.github.com/users/${username}`;
   console.log(`fetching user ${username} at - ${url}`);
 
   const response = await fetch(url);
   const json = await response.json();
-  console.log(json.name);
+
+  if (response.status !== 200 || json.message == 'Not Found') {
+    throw Error('User does not exist');
+  }
+  return json.name;
 }
 
 
-function getNombre(username) {
+function getName(username) {
   const url = `https://api.github.com/users/${username}`;
   console.log(`fetching user ${username} at - ${url}`);
   fetch(url)
@@ -21,4 +25,16 @@ function getNombre(username) {
     })
 }
 
-getNombreAsync('cupaiuoli');
+(async function() {
+  try {
+    const name = await getNameAsync('cupaiuoli')
+    console.log(name);
+  } catch (e) {
+    console.log(e);
+  }
+})()
+/*
+const name = getNameAsync('cupaiuolidd');
+name.then(completeName => console.log(completeName))
+  .catch(error => console.log(`${error}`));
+*/
