@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS Grid - 1</title>
+    <style media="screen">
+      body {
+        color: #fff;
+        font-family: 'Nunito Semibold';
+        text-align: center;
+      }
+      #content {
+        max-width: 960px;
+        margin: 0 auto;
+        display: grid;
+        /* Diplays elements in columns*/
+        grid-template-columns: repeat(3, 1fr);
+        /* Cut content => grid-auto-rows: 200px;*/
+        /* If content overflow, expand. min heigh 200px => grid-auto-rows: minmax(200px, auto);*/
+        /* distributed by repeat, now set height for rows => grid-template-rows: 200px 300px 400px 200px;*/
+        /* combined => grid-template-rows: repeat(3, minmax(200px,auto));*/
+        /* add margin between columns => grid-column-gap: 10px;*/
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+
+      }
+      #content div {
+          background: #3bbced;
+          padding: 30px;
+
+      }
+      #content div:nth-child(even) {
+        background: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <div>1</div>
+      <div>2</div>
+      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+    </div>
+  </body>
+</html>
