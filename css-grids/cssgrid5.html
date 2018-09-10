@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS Grid - 1</title>
+    <style media="screen">
+      body {
+        color: #fff;
+        text-align: center;
+      }
+      #content {
+        max-width: 960px;
+        margin: 0 auto;
+
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(250px, auto);
+
+        /* align-items is for up or down, justify-items is for left or right */
+        /* align at start => display at top of each box*/
+        /* align at end => display at the bottom of each box */
+        align-items: start;
+        justify-items: start;
+      }
+      #content div {
+          background: #3bbced;
+          padding: 30px;
+      }
+      #content div:nth-child(even) {
+        background: #777;
+      }
+      .one {
+        align-self: end;
+        justify-self: end;
+      }
+      .two {
+        align-self: center;
+        justify-self: center;
+      }
+      .three {
+        align-self: start;
+        justify-self: start;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <div class="one">1</div>
+      <div class="two">2</div>
+      <div class="three">3</div>
+      <div class="four">4</div>
+      <div class="five">5</div>
+      <div class="six">6</div>
+    </div>
+  </body>
+</html>
